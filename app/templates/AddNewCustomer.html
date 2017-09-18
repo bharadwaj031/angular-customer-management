@@ -1,0 +1,50 @@
+
+<div>
+    <h2>Create Customer</h2>
+    <form class="col-md-12">
+        <div class="col-md-6">
+            <div>
+                <label class="col-md-5 text-right" for="firstName" >First Name</label>
+                <input class="col-md-5" ng-model="addCustomer.customer.firstName" id="firstName" type="text"></input>
+            </div>
+            <div>
+                <label class="col-md-5 text-right" for="lastName" >Last Name</label>
+                <input class="col-md-5" ng-model="addCustomer.customer.lastName" id="lastName" type="text"></input>
+            </div>
+            <div>
+                <label  class="col-md-5 text-right" for="birthday" >Birthday</label>
+                <input  class="col-md-5" ng-model="addCustomer.customer.birthday"  id="birthday" type="text"></input>
+            </div>
+            <div>
+                <label  class="col-md-5 text-right"  for="gender" >Gender</label>
+                <select ng-model="addCustomer.customer.gender" class="col-md-5" id="gender">
+                    <option value="m">Male</option>
+                    <option value="w">Female</option>
+                </select>
+            </div>
+            <div>
+                <label  class="col-md-5 text-right"  for="lastContact" >Last Contact</label>
+                <input class="col-md-5" ng-model="addCustomer.customer.lastContact" id="lastContact" type="text" ></input>
+            </div>
+            <div>
+                <label  class="col-md-5 text-right"  for="customerLifetimeValue" >Customer Lifetime Value</label>
+                <input class="col-md-5" ng-model="addCustomer.customer.customerLifetimeValue" id="customerLifetimeValue" type="text"></input>
+            </div>
+            <div class="col-md-12 text-center">
+                    <button class="btn-info" ng-click="addCustomer.saveCustomer()">Save</button>
+                    <button class="btn-info" ng-click="addCustomer.cancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    $('#birthday, #lastContact').datepicker({  
+        dateFormat: "yy-mm-dd",
+        changeYear: true,
+        changeMonth: true,
+        yearRange: "-100:+0",
+        maxDate: 0
+    });
+</script>
+
+        

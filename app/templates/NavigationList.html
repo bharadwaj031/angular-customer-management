@@ -1,0 +1,21 @@
+<div>
+    <h2>Navigation Data for {{navigationListCtrl.name}}</h2>  
+    <div class="table-responsive">          
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Pages</th>
+                <th ng-click="navigationListCtrl.sortTimestampOrder('timestamp')">Timestamp {{navigationListCtrl.sortOrder?'D':'A'}}</th>
+                <th colspan="2">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="navData in navigationListCtrl.navigationList | orderBy: navigationList.sortField">
+                <td>{{navData.page}}</td>
+                <td>{{navData.timestamp}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div><button class="btn-success" ng-click="navigationListCtrl.backToOverview()">Back to Overview</button></div>
+    </div>
+</div>

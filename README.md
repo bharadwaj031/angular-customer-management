@@ -1,4 +1,4 @@
-# Customer Registration — Webterkk Application
+# Customer Registration - Sample Angular Application
 
 This project is a application demonstrating a more fully developed realistic single page
 angular application.

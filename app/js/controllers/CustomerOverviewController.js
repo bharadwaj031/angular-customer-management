@@ -1,7 +1,8 @@
 'use strict';
 customerOverviewApp.controller('CustomerOverviewController',
- function CustomerOverviewController($scope, CustomerServices, $location, _) {     
-    
+ function CustomerOverviewController($scope, CustomerServices, $location, _) {   
+ 
+    /* Initiate Db data when there are no data in local storage*/
     var initDb = CustomerServices.initiateDb();
     var logNavigation;
     this.customerOverviewData = [];
@@ -18,7 +19,9 @@ customerOverviewApp.controller('CustomerOverviewController',
             'navigate': 'Navigate'
         }
     };
-    this.customerOverviewData = CustomerServices.getCustomerList();     
+    this.customerOverviewData = CustomerServices.getCustomerList(); 
+ 
+    /* Sorting based on the column name either asc or desc*/
     this.sortOrder = function(sortField) {
         if (this.selectedfilter.sortField == sortField) {
             if (!this.selectedfilter.sortDescOrder){            
@@ -42,6 +45,7 @@ customerOverviewApp.controller('CustomerOverviewController',
     this.navData = function(id) {
         $location.url('/navData/'+id);
     }
+    /* Delete customer and reload with new data by getCustomerList()*/
     this.deleteCustomer = function(id) {
         var customers = _.filter(CustomerServices.getCustomerList(), function(data){
             return data.id != id;

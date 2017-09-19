@@ -7,7 +7,7 @@ customerOverviewApp.controller('EditCusomterController',
             'page': 'B',
             'timestamp': new moment().format("YYYY-MM-DD HH:mm:ss")
     });
-
+   /* Fetch the customer by id from the list of customers*/
     var customers = CustomerServices.getCustomerList();
     var index = _.findIndex(customers, function(data) { 
         return data.id  == $routeParams.id;
@@ -15,7 +15,7 @@ customerOverviewApp.controller('EditCusomterController',
     if(index > -1) {    
         this.customer = customers[index];
     }
-
+   /* Save the customer by id with the modified customer object*/
     this.saveCustomer = function() {
         if(index > -1)
             customers[index] = this.customer;
